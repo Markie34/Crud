@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* .header{
+    width: 100%;
+    height: 10vh;
+    padding: 20px;
+    position: relative;
+    background-color: rgb(46, 0, 119);
+}
+.header h1{
+    font-size: large;
+    color: white;
+}
+.container{
+    content: "";
+    display: flex;
+    justify-content: center;
+    position: relative;
+    clear: both;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    position: relative;
+   flex-direction: column;
+}
+.content button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2vh;
+    padding: 10px;
+    height: 10%;
+    width: 20%;
+    margin: 5px;
+    border: 2px solid rgb(0, 255, 0);
+    box-shadow: rgb(17, 15, 12) 3px 4px 9px;
+    color: rgb(0, 26, 255);
+    background: transparent;
+    position: relative;
+    float: left;
+    left: 0;
+    bottom: 0;
+    transform: translate(scaleX(-20px)scaleY(20px));
+    border-radius: 12px;
+}
+.content button:hover{
+    background-color: rgb(4, 43, 172);
+    color: white;
+    transition: 1s;
+    border: 0;
+    
+}
+table{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 12px;
+    border-collapse: collapse;
+}
+table thead{
+    background-color:rgb(7, 7, 97);
+}
+table thead th{
+    color: white;
+    padding: 10px;
+    justify-content: center;
+}
+tbody tr,td{
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+tbody tr td:hover{
+    background-color: blanchedalmond;
+} */
