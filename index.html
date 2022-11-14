@@ -6,51 +6,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+       
+    </script>
+    
 </head>
-<body>
-    <header>
-        <h1>CRUD</h1>
-    </header>
-    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-        <div>
-            <label>ID</label>           
-            <input type="text" name="ID" id="ID">
-        </div>
-        <div>
-            <label>Firstname</label>
-            <input type="text" name="fname" id="fname"><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-        </div>
-        <div>
-            <label>Lname</label>
-            <input type="text" name="lname" id="lname">
-        </div>
-        <div>
-            <label>Course</label>
-            <input type="text" name="course" id="course">
-        </div>
-        <div  class="form-action-buttons">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-</div>
-<br/>
 
-<div>
-    <table class="list" id="studentRec">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Course</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</div>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Logo -->
+        <div class="logo-details">
+            <i  class='bx bx-user-circle'></i>
+            <span class="logo_name">STUDENTS</span>
+          </div>
+          <!-- nav buttons -->
+        <ul class="nav-links">
+            <li>
+               <a  data-tab-target="#home" class="active tab">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a data-tab-target="#studentRec">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">View Records</span>
+                </a>
+            </li>
+            <li>
+                <a onclick="LoadFormInDashBoard()">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Add Students</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">About Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Favrorites</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Setting</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+        </nav>
+       
+        <div class="home-content">
+            <div class="students-boxes">
+                <div class="left-box box">
+                    <div class="title">STUDENT RECORDS</div>
+                    <div class="students-details">
+                          <table class="tables tab" data-tab-content id="studentRec">
+                            <thead class="table-header">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Course</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Firstname</td>
+                                    <td>Lastname</td>
+                                    <td>Course</td>
+                                    <td>Action</td>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Firstname</td>
+                                    <td>Lastname</td>
+                                    <td>Course</td>
+                                    <td>Action</td>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Firstname</td>
+                                    <td>Lastname</td>
+                                    <td>Course</td>
+                                    <td>Action</td>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Firstname</td>
+                                    <td>Lastname</td>
+                                    <td>Course</td>
+                                    <td>Action</td>
+                                </tr> 
+                                 </script>
+                            </tbody>
+                        </table>
+               
+                <ul class="tabs">
+                    <!-- <li data-tab-target="#home" class="active tab">Home</li> -->
+                    <li data-tab-target="#pricing" class="tab">Pricing</li>
+                    <li data-tab-target="#about" class="tab">About</li>
+                  </ul>
+                <div class="tab-content">
+                    <div id="home" data-tab-content class="active">
+                      <h1>Home</h1>
+                      <p>This is the home</p>
+                    </div>
+                    <div id="pricing" data-tab-content>
+                      <h1>Pricing</h1>
+                      <p>Some information on pricing</p>
+                    </div>
+                    <div id="about" data-tab-content>
+                      <h1>About</h1>
+                      <p>Let me tell you about me</p>
+                    </div>
+                  </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
     <script src="./assets/js/create.js"></script>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+    
 </body>
+
 </html>
