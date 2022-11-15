@@ -32,8 +32,8 @@ function insertNewRecord(data) {
     cell4 = newRow.insertCell(3);
     cell4.innerHTML = data.course;
     cell5 = newRow.insertCell(4);
-    cell5.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-                       <a onClick="onDelete(this)">Delete</a>`;
+    cell5.innerHTML = `<a class="buttons2 fa fa-edit" onClick="onEdit(this) ">edit</a>
+                       <a class="buttons1 fa fa-remove" onClick="onDelete(this)">delete</a>`;
 }
 
 function resetForm() {
@@ -57,7 +57,6 @@ function updateRecord(formData) {
     selectedRow.cells[2].innerHTML = formData.lname;
     selectedRow.cells[3].innerHTML = formData.course;
 }
-
 function onDelete(td) {
     if (confirm('Are you sure to delete this record ?')) {
         row = td.parentElement.parentElement;
@@ -69,11 +68,38 @@ function validate() {
     isValid = true;
     if (document.getElementById("ID").value == "") {
         isValid = false;
-        document.getElementById("fullNameValidationError").classList.remove("hide");
+        document.getElementById("IDValidationError").classList.remove("hide");
+    }else {
+        isValid = true;
+        if (!document.getElementById("IDValidationError").classList.contains("hide"))
+            document.getElementById("IDValidationError").classList.add("hide");
+    }
+    if (document.getElementById("fname").value == "") {
+        isValid = false;
+        document.getElementById("fnameValidationError").classList.remove("hide");
+    }else {
+        isValid = true;
+        if (!document.getElementById("fnameValidationError").classList.contains("hide"))
+            document.getElementById("fnameValidationError").classList.add("hide");
+    }
+    if (document.getElementById("lname").value == "") {
+        isValid = false;
+        document.getElementById("lnameValidationError").classList.remove("hide");
+    }else {
+        isValid = true;
+        if (!document.getElementById("lnameValidationError").classList.contains("hide"))
+            document.getElementById("lnameValidationError").classList.add("hide");
+    }
+    if (document.getElementById("course").value == "") {
+        isValid = false;
+        document.getElementById("courseValidationError").classList.remove("hide");
     } else {
         isValid = true;
-        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
-            document.getElementById("fullNameValidationError").classList.add("hide");
+        if (!document.getElementById("courseValidationError").classList.contains("hide"))
+            document.getElementById("courseValidationError").classList.add("hide");
     }
+    alert("Add student records success!");
     return isValid;
 }
+
+

@@ -8,7 +8,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -16,13 +16,14 @@
     <div class="sidebar">
         <!-- Logo -->
         <div class="logo-details">
-            <i class='bx bx-user-circle'></i>
-            <span class="logo_name">STUDENTS</span>
+            <img src="./assets/img/bulsu.jpg" alt="">
+            <!-- <i class='bx bx-user-circle'></i>
+            <span class="logo_name">STUDENTS</span> -->
         </div>
         <!-- nav buttons -->
         <ul class="nav-links">
             <li>
-                <a data-tab-target="#home" class="active tab">
+                <a data-tab-target="#dashboardnav">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -41,27 +42,9 @@
             </li>
 
             <li>
-                <a href="#">
+                <a data-tab-target="aboutUs">
                     <i class='bx bx-message'></i>
                     <span class="links_name">About Us</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-heart'></i>
-                    <span class="links_name">Favrorites</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>
-            <li class="log_out">
-                <a href="#">
-                    <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out</span>
                 </a>
             </li>
         </ul>
@@ -70,40 +53,66 @@
         <nav>
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Dashboard</span>
+                <span class="dashboard" >Dashboard</span>
             </div>
         </nav>
 
         <div class="home-content">
             <div class="students-boxes">
                 <div class="left-box box">
-                    <div class="title">STUDENT RECORDS</div>
+                    <!-- <div class="title">STUDENT RECORDS</div> -->
+                    <div data-tab-content id="dashboardnav" class="active">
+                        <div class="dashboards">
+                            <div class="registerContent">
+                                <img src="./assets/img/CHS - ICON - RECORDS REQUEST.png" alt="LOGO">
+                                <div class="text">
+                                    <h1><i> STUDENTS</i><span class="reg">REGISTRATION</span></h1>
+                                    <p id="Console"></p>
+                                    <span class="date">
+                                        
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div data-tab-content id="AddRecords">
+                        <h1>ADD STUDENT RECORDS</h1>
                         <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                            <div>
-                                <label>Student ID*</label><label class="validation-error hide" id="SutdentIDValidationError">This field is required.</label>
-                                <input type="text" name="ID" id="ID">
+                            <div class="mb-3">
+                                <label>Student ID*</label><label class="validation-error hide"
+                                    id="IDValidationError">Student ID is required.</label>
+                                <input type="text" name="ID" id="ID" autocomplete="off">
                             </div>
                             <div>
-                                <label>Firstname</label>
-                                <input type="text" name="fname" id="fname">
+                                <label>Firstname*</label><label class="validation-error hide"
+                                    id="fnameValidationError">Student name is required.</label>
+                                <input type="text" name="fname" id="fname" autocomplete="off">
                             </div>
                             <div>
-                                <label>Lastname</label>
-                                <input type="text" name="lname" id="lname">
+                                <label>Lastname*</label><label class="validation-error hide"
+                                    id="lnameValidationError">Student lastname is required.</label>
+                                <input type="text" name="lname" id="lname" autocomplete="off">
                             </div>
                             <div>
-                                <label>Course</label>
-                                <input type="text" name="course" id="course">
+                                <label>Course*</label><label class="validation-error hide"
+                                    id="courseValidationError">Student course is required.</label>
+                                <input type="text" name="course" id="course" autocomplete="off">
                             </div>
-
-                            <div class="form-action-buttons">
-                                <input type="submit" value="Submit">
+                            <div>
+                                <input class="button fa fa-user" type="submit" value="Submit">
                             </div>
                         </form>
                     </div>
+                    <div data-tab-content id="aboutUs">
+                        <div class="about">
+                            <div class="Cardabout">
+                               <h1>ABOUT US</h1>
+                            </div>
+                        </div>
+                    </div>
                     <div class="students-details">
                         <div data-tab-content id="studentRecords" class="studentRecords">
+                            <h1>STUDENTS RECORDS</h1>
                             <table class="studentRecords" id="studentRec">
                                 <thead>
                                     <tr>
@@ -114,21 +123,19 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
 
                                 </tbody>
                             </table>
                         </div>
-                        
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
     <!-- -->
     <script src="./assets/js/create.js"></script>
-    <script src="./assets/js/navbar.js"></script>
     <script>
         let sidebar = document.querySelector(".sidebar");
         let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -139,8 +146,22 @@
             } else
                 sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
         }
-        
+        function AddZero(num) {
+            return (num >= 0 && num < 10) ? "0" + num : num + "";
+        }
+
+        window.onload = function () {
+            var now = new Date();
+            var strDateTime = [[AddZero(now.getDate()),
+            AddZero(now.getMonth() + 1),
+            now.getFullYear()].join("/"),
+            [AddZero(now.getHours()),
+            AddZero(now.getMinutes())].join(":"),
+            now.getHours() >= 12 ? "PM" : "AM"].join(" ");
+            document.getElementById("Console").innerHTML = "Now: " + strDateTime;
+        };
     </script>
+    <script src="./assets/js/navbar.js"></script>
 
 </body>
 
