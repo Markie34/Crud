@@ -5,12 +5,18 @@
   box-sizing: border-box;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+[data-tab-content] {
+  display: none;
+}
+.active[data-tab-content] {
+  display: block;
+}
 /* Sidebar */
 .sidebar{
   position: fixed;
   height: 100%;
   width: 240px;
-  background-image: linear-gradient(blue,rgb(116, 5, 23));
+  background-image: linear-gradient(blue,rgb(68, 0, 0));
   transition: all 0.5s ease;
 }
 .sidebar.active{
@@ -77,7 +83,6 @@
 }
 .home-section{
   position: relative;
-
   min-height: 100vh;
   width: calc(100% - 240px);
   left: 240px;
@@ -116,86 +121,56 @@ nav .sidebar-button i{
   font-size: 35px;
   margin-right: 10px;
 }
-.tables{
-    border-collapse: collapse;
-    font-family:monospace;
-    font-weight: 100;
-    border-collapse: collapse;
-    width: 100%;
-}
-.table-header{
-   background-color: #0d3073;
-   color: white;
-   text-align: center;
-}
-.table-header th,tr{
-    padding: 5px;
-    text-align: center;
-}
 /* Home content */
-.home-section .home-content{
+ .home-content{
     position: relative;
     padding-top: 104px;
   }
 
-.home-content .students-boxes .left-box{
-  width: 90%;
+ .left-box{
+  width: 95%;
   background: rgb(255, 255, 255);
   padding: 20px 30px;
   margin: 0 20px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.home-content .students-boxes .students-details{
+.students-details{
   content: "";
   display: flex;
   align-items: center;
   justify-content: space-between;
+  list-style-type: none;
   clear: both;
 }
-.students-boxes .box .title{
+ .title{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-.students-boxes .box .button{
+/* Tables */
+.studentRecords {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
 }
 
-[data-tab-content] {
-    display: none;
-  }
-  
-  .active[data-tab-content] {
-    display: block;
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid black;
-  }
-  
-  .tab {
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  .tab.active {
-    background-color: #CCC;
-  }
-  
-  .tab:hover {
-    background-color: #AAA;
-  }
-  
-  .tab-content {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.studentRecords td, .studentRecords th {
+  padding: 8px;
+}
+.studentRecords tr:nth-child(even){background-color: #f2f2f2;}
+.studentRecords tr:hover {background-color: #ddd;}
+.studentRecords th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #031f6b;
+  color: white;
+}
+.data-tab-content{
+  padding: 40px;
+}
+.hide{
+  display:none;
+}
