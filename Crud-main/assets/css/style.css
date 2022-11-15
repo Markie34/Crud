@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro:ital,wght@0,200;0,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro:ital,wght@0,200;0,400;1,900&family=Varela+Round&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background-color: #b7041f;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active {
+  width: 60px;
+}
+
+/* Logo */
+.sidebar .logo-details {
+  width: 100%;
+  height: 20%;
+  display: block;
+  align-items: center;
+}
+
+.sidebar .logo-details img {
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.sidebar .logo-details i {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 60px;
+  text-align: center
+}
+
+.sidebar .logo-details .logo_name {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.logo-details img{
+  
+}
+
+/*Navbar link*/
+.sidebar .nav-links {
+  margin-top: 30%;
+}
+
+.sidebar .nav-links li {
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+
+.sidebar .nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li a.active {
+  background: #c37705;
+}
+
+.sidebar .nav-links li a:hover {
+  background: #c37105;
+}
+
+.sidebar .nav-links li i {
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.sidebar .nav-links li a .links_name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sidebar .nav-links .log_out {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.home-section {
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active~.home-section {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+.home-section nav {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.sidebar.active~.home-section nav {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.home-section nav .sidebar-button {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+nav .sidebar-button i {
+  background-color: #b7041f;
+  color: white;
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+/* Home content */
+.home-content {
+  position: relative;
+  padding-top: 104px;
+}
+
+.left-box {
+  width: 95%;
+  background: rgb(255, 255, 255);
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.students-details {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  clear: both;
+}
+
+.title {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Tables */
+.studentRecords {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.studentRecords td,
+.studentRecords th {
+  padding: 8px;
+}
+
+.studentRecords tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.studentRecords tr:hover {
+  background-color: #ddd;
+}
+
+.studentRecords th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #aa0c0c;
+  color: white;
+}
+
+.data-tab-content {
+  padding: 40px;
+}
+
+.hide {
+  display: none;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 6px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #32197c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+}
+
+input:hover[type="submit"] {
+  background: rgb(81, 255, 0);
+  transition: 2s;
+}
+
+/* parent */
+.dashboards {
+  content: "";
+  display: grid;
+  position:relative;
+  clear: both;
+}
+.registerContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  padding: 20px;
+  background-color: #e29d98e3;
+}
+.registerContent img {
+  width: 30%;
+  height: auto;
+  image-resolution: 1000%;
+
+}
+.text {
+  display: flex;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  position:relative;
+  float: right;
+  justify-content: right;
+  font-size: 50px;
+  width: 100%;
+}
+
+.text h1 {
+  padding: 5%;
+  color: rgb(102, 7, 7);
+  transition: 2s;
+}
+
+.text h1 i {
+  font-weight: 700;
+  text-shadow: white 3px 2px;
+}
+.reg {
+  position: absolute;
+  display: block;
+  font-family: 'Source Code Pro', monospace;
+  color: rgb(150, 5, 5);
+  font-size: 30px;
+  margin-top: 0px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+/* .text .date {
+  position: absolute;
+  display: block;
+  color:black;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 35%;
+  
+} */
+
+.textContent {
+  position: absolute;
+  display: block;
+  font-size: medium;
+  margin-top: 14%;
+  padding: 5%;
+
+}
+
+.buttons1 {
+  width: 27%;
+  padding: 5px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 900;
+  font-size: smaller;
+  background-color: #b80b0b;
+  border-radius: 5px;
+  text-align: center;
+  border: 0;
+}
+.buttons2 {
+  width: 27%;
+  padding: 5px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 900;
+  font-size: smaller;
+  background-color: #087924;
+  text-align: center;
+  border-radius: 5px;
+  border: 0;
+}
+.buttons1, .buttons2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.validation-error{
+  color: red;
+  font-size: medium;
+}
+.about{
+  content: "";
+  display: block;
+  position:absolute;
+  clear:both;
+}
+.Cardabout{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-shrink: inherit;
+  width: 100%;
+  height: 100%;
+}
